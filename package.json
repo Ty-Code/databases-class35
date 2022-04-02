@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ty-Code/databases-class35#readme",
   "dependencies": {
     "mysql": "^2.18.1",
+    "prompt": "^1.2.2",
     "util": "^0.12.4"
   },
   "devDependencies": {
