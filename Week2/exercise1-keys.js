@@ -31,7 +31,7 @@ const createTable = `CREATE TABLE authors(
   university varchar(100),
   date_of_birth date,
   h_index int,
-  gender enum('m', 'f'))`;
+  gender enum('m', 'f')) AUTO_INCREMENT = 101`;
 const addColumn = `ALTER TABLE authors 
 ADD COLUMN mentor int,
 ADD FOREIGN KEY (mentor)
