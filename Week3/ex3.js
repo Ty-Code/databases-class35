@@ -1,3 +1,7 @@
+/* ANSWER TO QUESTION 1: 
+Example value: ' or ''='
+ */
+
 const prompt = require('prompt');
 const mysql = require('mysql');
 const util = require('util');
@@ -12,11 +16,13 @@ const connection = mysql.createConnection({
 
 const input = util.promisify(prompt.get.bind(this));
 
-function getPopulation(Country, name, code, cb) {
+function getPopulation(table, name, code, cb) {
   connection.query(
-    `SELECT Population FROM ${Country} WHERE Name =` +
+    'SELECT Population FROM ' +
+      connection.escape(table).slice(1, -1) +
+      ' WHERE Name = ' +
       connection.escape(name) +
-      ' and code =' +
+      ' and code = ' +
       connection.escape(code),
     function (err, result) {
       if (err) cb(err);

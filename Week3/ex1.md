@@ -21,16 +21,19 @@ member_address
 dinner_id (PK)
 dinner_date
 venue_code (FK)
-food_code (FK)
 
 **venues**
 venue_code (PK)
 venue_description
 
-**foods**
+**food**
 food_code (PK)
 food_description
 
-**dinners_of_members**
+**dinner_member**
 member_id (FK)
 dinner_id (FK)
+
+**dinner_food**
+dinner_id (FK)
+food_code (FK)
